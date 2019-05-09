@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/animate.css" />
+    <link rel="stylesheet/less" href="./css/index.less" />
+    <link rel="stylesheet" href="./css/swiper.min.css" />
+    <script src="./js/less-2.5.3.min.js"></script>
+    <script>
+        // 一开始就要设置的东西最好写在script前面
+        (function(){
+            // 让html的font-size随着屏幕大小改变，实习响应式布局
+            let remChange = function(){
+                let winW = document.documentElement.clientWidth;
+                if(winW >= 640){
+                    document.documentElement.style.fontSize = '100px';
+                    return;
+                }
+                let fontS = (winW/640)*100; 
+                document.documentElement.style.fontSize = fontS+'px';
+                console.log(fontS);
+            }
+
+            remChange();
+
+            window.onresize = remChange;
+
+    })()
+    </script>
+  </head>
+  <body>
+    <div class="mainBox">
+
+      <div class="music">
+        <audio
+          src="./audio/R7CKY - 夢燈籠 (R7CKY 你的名字 Mix).mp3"
+          autoplay="true"
+          id="audio"
+          preload="metadate"
+        ></audio>
+      </div>
+      <div class="swiper-container">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div class="page1" id="page1">
+              <div class="tit">
+                <h1>个人简历</h1>
+                <p>PERSONAL RESUME</p>
+              </div>
+              <div class="intention">
+                <i class="border borderLeft"></i>
+                <span>
+                  <i>求职意向</i>
+                  前端工作者
+                </span>
+                <i class="border borderC"></i>
+                <span><i>求职者</i>韩正鸿</span>
+                <i class="border borderRight"></i>
+              </div>
+              <div class="pic">
+                <div class="cover">
+                  <img src="./img/myself.png" />
+                  <div class="cover2"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div class="page2">
+              <div class="tit">
+                <div class="square1"></div>
+                <div class="square2"></div>
+                <div class="text">
+                  <h2>基本信息</h2>
+                  <p>Essential information</p>
+                </div>
+              </div>
+              <div class="list">
+                <i class="border"></i>
+                <ul class="detail">
+                  <li>姓名：韩韩</li>
+                  <li>学校：湖北第二师范学院</li>
+                  <li>学历：本科</li>
+                  <li>职位：求职贵公司前端工作者</li>
+                  <li>电话：15927621756</li>
+                  <li>邮箱：1528237018@qq.com</li>
+                </ul>
+              </div>
+
+              <div class="introduce">
+                <div class="my">
+                  <h3>自我评价</h3>
+                  <p>
+                    有吸引力的自我评价。好的自我评价是对整个简历的精炼概括，让HR对你整个简历产生兴趣的起点。
+                    举几个例子：
+                    对互联网工作有极大的热情，做过N年的论坛板主；具备网络推广经验，擅长策划、数据收集和文案写作。
+                    N年财务工作经验，已获得中级会计资格证书，在大型企业担任过全盘会计，财务主管，精通会计政策和法规，熟练使用财务软件。
+                  </p>
+                </div>
+                <div class="squ"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div class="page3">
+              <div class="tit">
+                <div class="square1"></div>
+                <div class="square2"></div>
+                <div class="text">
+                  <h2>工作能力</h2>
+                  <p>Working ability</p>
+                </div>
+              </div>
+              <div class="main">
+                <div class="des one">
+                  <div class="left">
+                    <span class="triangle">
+                      <span class="smTri"> </span>
+                    </span>
+                    <div class="border"></div>
+                  </div>
+                  <div class="right">
+                    熟练掌握HTML+CSS布局，掌握HTML5+CSS3，以及flex布局，响应式布局和webapp的开发。
+                  </div>
+                </div>
+
+                <div class="des two">
+                  <div class="left">
+                    <span class="triangle">
+                      <span class="smTri"> </span>
+                    </span>
+                    <div class="border"></div>
+                  </div>
+                  <div class="right">
+                    掌握JavaScript，掌握AJAX，Axios，掌握es6基本语法，
+                    了解设计模式，闭包等基本概念， 能熟练运用Jquery，vue等框架。
+                  </div>
+                </div>
+
+                <div class="des three">
+                  <div class="left">
+                    <span class="triangle">
+                      <span class="smTri"> </span>
+                    </span>
+                    <div class="border"></div>
+                  </div>
+                  <div class="right">
+                    能运用node.js编写后台server，进行接口处理，对后端有一定的了解。
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div class="page4">
+              <div class="tit">
+                <div class="square1"></div>
+                <div class="square2"></div>
+                <div class="text">
+                  <h2>辅助技能</h2>
+                  <p>Working ability</p>
+                </div>
+              </div>
+              <div class="main">
+                <div class="des one">
+                  <div class="cir">证书</div>
+                  <div class="text">
+                    计算机二级证书，大学英语四级证书，普通话证书，实用创新专利证书
+                  </div>
+                </div>
+                <div class="des two">
+                  <div class="cir">技能</div>
+                  <div class="text">
+                    掌握office办公软件，PS，FW，VScode,git等软件。
+                  </div>
+                </div>
+                <div class="des three">
+                  <div class="cir">能力</div>
+                  <div class="text">
+                    大学期间参加多个校内组织，策划并参与志愿活动，多次获得学校奖学金。
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div class="page5">
+              <div class="tit">
+                <div class="square1"></div>
+                <div class="square2"></div>
+                <div class="text">
+                  <h2>实际训练项目</h2>
+                  <p>Practical training projects</p>
+                </div>
+              </div>
+              <div class="main">
+                        <div class="one">
+                            <a href="https://isxianxian.github.io/sort/">商城排序页面</a>
+                        </div>
+                        <div class="two">
+                            <a href="https://isxianxian.github.io/waterfall/">瀑布流页面</a>
+                        </div>
+                    <div class="three">
+                        <a href="https://github.com/isxianxian/Bookkeeping">在线后台资金管理平台</a>
+                    </div>
+                </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div class="page6">
+              <div class="tit">
+                <div class="square1"></div>
+                <div class="square2"></div>
+                <div class="text">
+                  <h2>感谢收看</h2>
+                  <p>Thank you for watching</p>
+                </div>
+              </div>
+              <div class="main">
+                  <h3>期待您的回复</h3>
+                   <p class="one">......</p>
+                   <p class='eng'>Looking forword to reply</p> 
+                   <img src="./img/my.png" alt="">
+                   <p class='tel'>手机微信 | 15927621756</p>
+                   <p class="email">电子邮箱 | 1528237018@qq.com</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="guide"></div>
+    </div>
+  </body>
+</html>
+<script src="./js/zepto.min.js"></script>
+<script src="./js/swiper-3.4.2.jquery.min.js"></script>
+<script src="./js/index.js"></script>

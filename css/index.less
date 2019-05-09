@@ -1,0 +1,619 @@
+@import "./reset.min.css";
+@import "./animate.css";
+
+html {
+  font-size: 100px;
+}
+body,
+html {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  .mainBox {
+    max-width: 640px;
+    height: 100%;
+    margin: 0 auto;
+    color: #fff;
+    background: url("../img/bg.gif");
+
+    .music {
+      position: fixed;
+      top: 0.1rem;
+      right: 0.1rem;
+      width: 0.5rem;
+      height: 0.5rem;
+      background: url("../img/music_off_8d94020.png") no-repeat center center;
+      border-radius: 50%;
+      z-index: 100;
+    }
+
+    .swiper-container {
+      height: 100%;
+      .swiper-wrapper {
+        height: 100%;
+        .swiper-slide {
+          height: 100%;
+        }
+      }
+    }
+  }
+}
+
+.animate {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: #fff;
+
+  .cir1,
+  .cir2,
+  .cir3,
+  .cir4 {
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background-color: #000;
+  }
+
+  .cir1 {
+    width: 14rem;
+    height: 14rem;
+    margin: -7rem;
+    animation: zoom 1.2s linear 0s 1 both;
+  }
+  .cir2 {
+    width: 10rem;
+    height: 10rem;
+    margin: -5rem;
+    border: 0.05rem solid #fff;
+    animation: myZoomIn 1.2s linear 0.05s 1 both;
+  }
+  .cir3 {
+    width: 7rem;
+    height: 7rem;
+    margin: -3.9rem;
+    border: 0.5rem solid #fff;
+    animation: myZoomIn 1.2s linear 0.1s 1 both;
+  }
+  .cir4 {
+    width: 4rem;
+    height: 4rem;
+    margin: -2rem;
+    animation: myZoomIn 1.2s linear 0.15s 1 both;
+    background-color: #fff;
+  }
+
+  @keyframes myZoomIn {
+    from {
+      opacity: 0;
+      -webkit-transform: scale3d(0.3, 0.3, 0.3);
+      transform: scale3d(0.3, 0.3, 0.3);
+    }
+
+    60% {
+      opacity: 1;
+      transform: scale3d(1, 1, 1);
+    }
+    to {
+      opacity: 0;
+      background-color: transparent;
+    }
+  }
+  @keyframes zoom {
+    from {
+      opacity: 0;
+      -webkit-transform: scale3d(0.3, 0.3, 0.3);
+      transform: scale3d(0.3, 0.3, 0.3);
+    }
+
+    60% {
+      opacity: 1;
+      transform: scale3d(1, 1, 1);
+    }
+  }
+}
+.mainBox {
+  .page1 {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    padding-top: 1rem;
+    display: none;
+
+    h1 {
+      font-size: 0.9rem;
+      text-align: center;
+    }
+    p {
+      margin: 0.25rem 0 0.5rem;
+      text-align: center;
+      font-size: 0.3rem;
+      letter-spacing: 0.02rem;
+    }
+    .intention {
+      font-size: 0.26rem;
+      width: 4.3rem;
+      height: 1rem;
+      margin: 0.8rem auto;
+      display: flex;
+      i.border {
+        display: inline-block;
+        width: 0.03rem;
+        height: 0.8rem;
+        background-color: #a0a0a0;
+      }
+      span {
+        flex: 1;
+        height: 100%;
+        padding: 0 0.3rem;
+        font-size: 0.3rem;
+
+        i {
+          font-style: normal;
+          font-size: 0.25rem;
+          padding-bottom: 0.05rem;
+          display: block;
+        }
+
+        &.name {
+          text-align: center;
+          font-size: 0.24rem;
+          line-height: 0.44rem;
+        }
+      }
+    }
+
+    .pic {
+      position: relative;
+      width: 2.9rem;
+      height: 2.9rem;
+      margin: 1rem auto;
+
+      .cover {
+        position: relative;
+        width: 3rem;
+        height: 3rem;
+        margin: 0.6rem auto 0;
+        border: 0.01rem dashed #f8bc00;
+        transform: rotate(45deg);
+        overflow: hidden;
+        img {
+          position: absolute;
+          top: -1.0rem;
+          left: 0rem;
+          width: 5rem;
+          transform: rotate(-45deg);
+        }
+        .cover2 {
+          position: absolute;
+          width: 2.8rem;
+          height: 2.8rem;
+          border: 0.1rem solid #000;
+        }
+      }
+    }
+  }
+  #page1 {
+    .tit {
+      animation: bounceInRight 1s linear 0s 1 both;
+    }
+    .intention {
+      i.borderLeft {
+        animation: rotateInDownLeft 0.3s linear 0s 1 both;
+      }
+      i.borderC {
+        animation: rotateIn 0.3s linear 0s 1 both;
+      }
+      i.borderRight {
+        animation: rotateInDownRight 0.3s linear 0s 1 both;
+      }
+      span {
+        animation: zoomIn 0.4s linear 0.3s 1 both;
+      }
+    }
+    .pic {
+      .cover {
+        animation: fadeIn 0.6s linear 0s 1 both;
+        img {
+          animation: zoomIn 1s linear 0.3s 1 both;
+        }
+      }
+    }
+  }
+
+  .page2,
+  .page3,
+  .page4,
+  .page5,
+  .page6 {
+    height: 100%;
+    position: relative;
+    .tit {
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      .square1 {
+        width: 1.6rem;
+        height: 1.6rem;
+        background-color: #f9bc00;
+        opacity: 0.95;
+      }
+      .square2 {
+        position: absolute;
+        top: 1.1rem;
+        left: 1.1rem;
+        width: 1rem;
+        height: 1rem;
+        border: 0.01rem solid #f9bc00;
+      }
+      .text {
+        padding: 1.5rem 0.5rem 0 0;
+        h2 {
+          font-size: 0.6rem;
+          margin-bottom: 0.1rem;
+        }
+        p {
+          font-size: 0.3rem;
+        }
+      }
+    }
+  }
+
+  #page2,
+  #page3,
+  #page4,
+  #page5,
+  #page6 {
+    .tit {
+      .square2 {
+        animation: myRotateIn 3s linear 0s infinite both;
+      }
+      h2,
+      p {
+        animation: bounceInLeft 1s linear 0s 1 both;
+      }
+    }
+  }
+
+  .page2 {
+    .list {
+      padding-left: 0.3rem;
+      i.border {
+        display: inline-block;
+        width: 0.05rem;
+        height: 2.5rem;
+        vertical-align: bottom;
+        background-color: #fdbf00;
+      }
+      .detail {
+        display: inline-block;
+        font-size: 0.3rem;
+        padding-left: 0.1rem;
+      }
+    }
+
+    .introduce {
+      position: absolute;
+      bottom: 0;
+      display: flex;
+      justify-content: flex-start;
+      background-color: #fdbf00;
+      color: #000;
+      .my {
+        padding: 0.2rem;
+        flex: 9;
+        h3 {
+          font-size: 0.4rem;
+          font-weight: normal;
+          text-align: right;
+          margin-right: 0.15rem;
+          margin-bottom: 0.1rem;
+        }
+        p {
+          font-size: 0.3rem;
+          line-height: 0.45rem;
+        }
+      }
+      .squ {
+        flex: 1;
+        margin: 0.3rem 0.2rem 0 0;
+        background-color: #000;
+      }
+    }
+  }
+  #page2 {
+    .list {
+      i.border {
+        animation: bounceInLeft 1.5s linear 0.2s 1 both;
+      }
+      .detail {
+        animation: bounceInRight 1.5s linear 0.2s 1 both;
+      }
+    }
+    .introduce {
+      animation: bounceInLeft 2s linear 1s 1 both;
+      .my {
+        animation: zoomIn 1s linear 3s 1 both;
+      }
+      .squ {
+        animation: bounceInRight 1.5s linear 1.5s 1 both;
+      }
+    }
+
+    @keyframes myRotateIn {
+      from {
+        -webkit-transform-origin: center;
+        transform-origin: center;
+        -webkit-transform: rotate3d(0, 0, 1, -200deg);
+        transform: rotate3d(0, 0, 1, -200deg);
+      }
+
+      to {
+        -webkit-transform-origin: center;
+        transform-origin: center;
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+      }
+    }
+  }
+
+  .page3 {
+    .main {
+      margin-top: 0.6rem;
+      .des {
+        display: flex;
+        justify-content: space-around;
+        margin-bottom: 0.2rem;
+
+        .left {
+          flex: 1;
+          span.triangle {
+            position: relative;
+            border: 0.6rem solid;
+            margin-left: 0.22rem;
+            border-bottom: 1.2rem solid;
+            border-color: transparent transparent #ecb200;
+
+            span.smTri {
+              border: 0.4rem solid;
+              border-bottom: 0.9rem solid;
+              border-color: transparent transparent #000;
+              position: absolute;
+              top: 0.1rem;
+              left: -0.4rem;
+            }
+          }
+
+          .border {
+            width: 0.07rem;
+            height: 1rem;
+            margin-left: 0.8rem;
+            margin-top: 0.9rem;
+            background-color: #ecb200;
+          }
+        }
+
+        .right {
+          flex: 2;
+          font-size: 0.3rem;
+          padding-top: 0.3rem;
+          padding-right: 0.6rem;
+          line-height: 0.4rem;
+        }
+      }
+    }
+  }
+  #page3 {
+    .main {
+      .one {
+        .left {
+          animation: rotateInUpLeft 0.7s linear 0.5s 1 both;
+        }
+        .right {
+          animation: rotateInUpRight 0.7s linear 0.5s 1 both;
+        }
+      }
+      .two {
+        .left {
+          animation: rotateInUpLeft 0.7s linear 1s 1 both;
+        }
+        .right {
+          animation: rotateInUpRight 0.7s linear 1s 1 both;
+        }
+      }
+      .three {
+        .left {
+          animation: rotateInUpLeft 0.7s linear 1.5s 1 both;
+        }
+        .right {
+          animation: rotateInUpRight 0.7s linear 1.5s 1 both;
+        }
+      }
+    }
+  }
+
+  .page4 {
+    .main {
+      margin-top: 1rem;
+      .des {
+        padding-left: 0.2rem;
+        margin-bottom: 0.5rem;
+        height: 2rem;
+        .cir {
+          float: left;
+          display: block;
+          width: 1.5rem;
+          height: 1.5rem;
+          border-radius: 50%;
+          background-color: #f9bc00;
+          font-size: 0.4rem;
+          color: #000;
+          line-height: 1.5rem;
+          text-align: center;
+          margin-right: 0.2rem;
+        }
+        .text {
+          padding: 0.2rem 0.5rem 0 2rem;
+          font-size: 0.3rem;
+        }
+      }
+    }
+  }
+  #page4 {
+    .main {
+      .one {
+        .cir {
+          animation: fadeIn 0.6s linear 1s 1 both;
+        }
+        .text {
+          animation: lightSpeedIn 1s linear 1s 1 both;
+        }
+      }
+      .two {
+        .cir {
+          animation: fadeIn 0.6s linear 1.7s 1 both;
+        }
+        .text {
+          animation: lightSpeedIn 1s linear 1.7s 1 both;
+        }
+      }
+      .three {
+        .cir {
+          animation: fadeIn 0.6s linear 2.4s 1 both;
+        }
+        .text {
+          animation: lightSpeedIn 1s linear 2.4s 1 both;
+        }
+      }
+    }
+  }
+
+  .page5 {
+    .main {
+      margin-top: 1rem;
+      div {
+        a {
+          display: block;
+          margin:0.05rem;
+          width: 2rem;
+          height: 2rem;
+          border-radius: 50%;
+          font-size: 0.3rem;
+          background-color: #f9bc00;
+          color: #000;
+          text-align: center;
+          line-height: 2rem;
+          margin-bottom: 0.5rem;
+        }
+        &.one {
+          margin-left: 1rem;
+        }
+        &.two {
+          margin-left: 2rem;
+        }
+        &.three {
+          margin-left: 3rem;
+        }
+      }
+    }
+  }
+  #page5 {
+    .main {
+      .one {
+        a {
+          animation: rotateIn 0.7s linear 1s 1 both;
+        }
+      }
+      .two {
+        a {
+          animation: rotateIn 0.7s linear 1.5s 1 both;
+        }
+      }
+      .three {
+        a {
+          animation: rotateIn 0.7s linear 2s 1 both;
+        }
+      }
+      div{
+        animation: tada 1.5s linear 3s infinite both;
+      }
+    }
+  }
+
+  .page6 {
+    .main {
+      margin-top: 1rem;
+      text-align: center;
+      font-size: 0.3rem;
+      color: #ecb200;
+      h3 {
+        font-size: 0.4rem;
+      }
+      .eng {
+        font-size: 0.24rem;
+      }
+
+      img {
+        width: 3rem;
+        margin: 0.5rem 0;
+      }
+      .tel,
+      .email {
+        line-height: 0.5rem;
+      }
+    }
+  }
+  #page6 {
+    .main {
+      h3 {
+        animation: fadeIn 0.5s linear 0.5s 1 both;
+      }
+      p.one {
+        animation: fadeIn 0.5s linear 1s 1 both;
+      }
+      p.eng {
+        animation: fadeIn 0.5s linear 1.5s 1 both;
+      }
+      img {
+        animation: fadeIn 0.5s linear 2s 1 both;
+      }
+      p.tel {
+        animation: fadeIn 0.5s linear 2.5s 1 both;
+      }
+      p.email {
+        animation: fadeIn 0.5s linear 3s 1 both;
+      }
+    }
+  }
+
+  .guide {
+    background: url("../img/guide.png") no-repeat center center;
+    width: 0.3rem;
+    height: 0.28rem;
+    position: fixed;
+    bottom: 0.1rem;
+    left: 50%;
+    z-index: 9;
+    margin-left: -0.15rem;
+    opacity: 0;
+    animation: swim 1.5s linear 0s infinite;
+
+    @keyframes swim {
+      from {
+        opacity: 0;
+      }
+      10% {
+        opacity: 1;
+      }
+      80% {
+        opacity: 0.1;
+        transform: translateY(-0.2rem);
+      }
+      to {
+        transform: translateY(0);
+      }
+    }
+  }
+}
