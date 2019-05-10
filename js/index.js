@@ -1,8 +1,17 @@
 $(function(){
+    $(document).ready(function () {
+
+        if(location.href.indexOf("#reloaded")==-1){
+           location.href=location.href+"#reloaded";
+           location.reload();
+       }
+    })
+
     let myAudio = $("#audio")[0];
     let $music = $('.mainBox>.music');
     setTimeout(function(){
         myAudio.play();
+        // myrefresh();
     })
     let i = 1;
     $music.on('click' , function(){
