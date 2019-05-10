@@ -4,7 +4,7 @@ $(function(){
     let $music = $('.mainBox>.music');
     setTimeout(function(){
         myAudio.play();
-    })
+    },10)
     let i = 1;
     $music.on('click' , function(){
         i *= -1;
