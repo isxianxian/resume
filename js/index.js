@@ -1,9 +1,20 @@
 $(function(){
     let myAudio = $("#audio")[0];
+    let $music = $('.mainBox>.music');
     setTimeout(function(){
-        console.log('ll');
         myAudio.play();
-    },150)
+    })
+    let i = 1;
+    $music.on('click' , function(){
+        i *= -1;
+        if(i<0){
+            $music.removeClass('active');
+            myAudio.pause();
+        }else{
+            $music.addClass('active');
+            myAudio.play();
+        }
+    })
 
     $animate = $(
         `<div class="animate">

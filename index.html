@@ -2,39 +2,81 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no"
+    />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Document</title>
     <link rel="stylesheet" href="./css/animate.css" />
-    <link rel="stylesheet/less" href="./css/index.less" />
+    <link
+      media="(max-width:640px)"
+      rel="stylesheet/less"
+      href="./css/index.less"
+    />
     <link rel="stylesheet" href="./css/swiper.min.css" />
     <script src="./js/less-2.5.3.min.js"></script>
+    <style>
+      @media screen and (min-width: 600px) {
+        /*当屏幕尺寸大于640px时，应用下面的CSS样式*/
+        * {
+          margin: 0;
+          padding: 0;
+        }
+        html {
+          font-size: 100px;
+        }
+        html,
+        body {
+          width: 100%;
+          height: 100%;
+          overflow: hidden;
+        }
+        .mainBox {
+          display: none;
+        }
+        .bigBox {
+          height: 100%;
+          background: url("./img/bg.gif");
+        }
+        .bigBox p {
+          position: fixed;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          font-size: 0.4rem;
+          color: #fff;
+          letter-spacing: 0.1rem;
+        }
+      }
+    </style>
     <script>
-        // 一开始就要设置的东西最好写在script前面
-        (function(){
-            // 让html的font-size随着屏幕大小改变，实习响应式布局
-            let remChange = function(){
-                let winW = document.documentElement.clientWidth;
-                if(winW >= 640){
-                    document.documentElement.style.fontSize = '100px';
-                    return;
-                }
-                let fontS = (winW/640)*100; 
-                document.documentElement.style.fontSize = fontS+'px';
-                console.log(fontS);
-            }
+      // 一开始就要设置的东西最好写在script前面
+      (function() {
+        // 让html的font-size随着屏幕大小改变，实习响应式布局
+        let remChange = function() {
+          let winW = document.documentElement.clientWidth;
+          if (winW >= 640) {
+            document.documentElement.style.fontSize = "100px";
+            return;
+          }
+          let fontS = (winW / 640) * 100;
+          document.documentElement.style.fontSize = fontS + "px";
+          console.log(fontS);
+        };
 
-            remChange();
+        remChange();
 
-            window.onresize = remChange;
-
-    })()
+        window.onresize = remChange;
+      })();
     </script>
   </head>
   <body>
+    <div class="bigBox">
+      <p>请在手机端观看！</p>
+    </div>
     <div class="mainBox">
-
-      <div class="music">
+      <div class="music active">
         <audio
           src="./audio/R7CKY - 夢燈籠 (R7CKY 你的名字 Mix).mp3"
           autoplay="true"
@@ -82,7 +124,7 @@
               <div class="list">
                 <i class="border"></i>
                 <ul class="detail">
-                  <li>姓名：韩韩</li>
+                  <li>姓名：韩正鸿</li>
                   <li>学校：湖北第二师范学院</li>
                   <li>学历：本科</li>
                   <li>职位：求职贵公司前端工作者</li>
@@ -95,10 +137,9 @@
                 <div class="my">
                   <h3>自我评价</h3>
                   <p>
-                    有吸引力的自我评价。好的自我评价是对整个简历的精炼概括，让HR对你整个简历产生兴趣的起点。
-                    举几个例子：
-                    对互联网工作有极大的热情，做过N年的论坛板主；具备网络推广经验，擅长策划、数据收集和文案写作。
-                    N年财务工作经验，已获得中级会计资格证书，在大型企业担任过全盘会计，财务主管，精通会计政策和法规，熟练使用财务软件。
+                    学习刻苦认真，成绩优秀，连续两年获得学院奖学金。
+                    在校期间参加院志协，策划并参与了多项志愿活动，比如三下乡活动且
+                    逻辑性强，自学能力好，能快速接收新知识。
                   </p>
                 </div>
                 <div class="squ"></div>
@@ -125,7 +166,7 @@
                     <div class="border"></div>
                   </div>
                   <div class="right">
-                    熟练掌握HTML+CSS布局，掌握HTML5+CSS3，以及flex布局，响应式布局和webapp的开发。
+                    熟练掌握HTML+CSS布局，掌握HTML5+CSS3，以及flex布局，响应式布局开发。
                   </div>
                 </div>
 
@@ -137,8 +178,8 @@
                     <div class="border"></div>
                   </div>
                   <div class="right">
-                    掌握JavaScript，掌握AJAX，Axios，掌握es6基本语法，
-                    了解设计模式，闭包等基本概念， 能熟练运用Jquery，vue等框架。
+                    理解并掌握JavaScript语言核心技术DOM，BOM，Ajax等。
+                    了解设计模式，闭包等基本概率，能熟练使用jQuery库完成需求。
                   </div>
                 </div>
 
@@ -150,7 +191,19 @@
                     <div class="border"></div>
                   </div>
                   <div class="right">
-                    能运用node.js编写后台server，进行接口处理，对后端有一定的了解。
+                    掌握vue全家桶（Vue+Vue-router+Vuex+axios）+Element。掌握ES6基本概念。
+                  </div>
+                </div>
+
+                <div class="des four">
+                  <div class="left">
+                    <span class="triangle">
+                      <span class="smTri"> </span>
+                    </span>
+                    <div class="border"></div>
+                  </div>
+                  <div class="right">
+                    了解并掌握Node.js,express,能利用它们编写后台server，进行接口处理，对后端有一定的了解。
                   </div>
                 </div>
               </div>
@@ -201,16 +254,20 @@
                 </div>
               </div>
               <div class="main">
-                        <div class="one">
-                            <a href="https://isxianxian.github.io/sort/">商城排序页面</a>
-                        </div>
-                        <div class="two">
-                            <a href="https://isxianxian.github.io/waterfall/">瀑布流页面</a>
-                        </div>
-                    <div class="three">
-                        <a href="https://github.com/isxianxian/Bookkeeping">在线后台资金管理平台</a>
-                    </div>
+                <div class="one">
+                  <a href="https://isxianxian.github.io/sort/">商城排序页面</a>
                 </div>
+                <div class="two">
+                  <a href="https://isxianxian.github.io/waterfall/"
+                    >瀑布流页面</a
+                  >
+                </div>
+                <div class="three">
+                  <a href="https://github.com/isxianxian/Bookkeeping"
+                    >在线后台资金管理</a
+                  >
+                </div>
+              </div>
             </div>
           </div>
 
@@ -225,12 +282,12 @@
                 </div>
               </div>
               <div class="main">
-                  <h3>期待您的回复</h3>
-                   <p class="one">......</p>
-                   <p class='eng'>Looking forword to reply</p> 
-                   <img src="./img/my.png" alt="">
-                   <p class='tel'>手机微信 | 15927621756</p>
-                   <p class="email">电子邮箱 | 1528237018@qq.com</p>
+                <h3>期待您的回复</h3>
+                <p class="one">......</p>
+                <p class="eng">Looking forword to reply</p>
+                <img src="./img/my.png" alt="" />
+                <p class="tel">手机微信 | 15927621756</p>
+                <p class="email">电子邮箱 | 1528237018@qq.com</p>
               </div>
             </div>
           </div>
